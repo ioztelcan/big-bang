@@ -1,0 +1,16 @@
+---
+# Clone the dotfile repository in the home directory and run setup.
+
+#- name: Initialize home directory as git repo
+
+- name: Initialize a git repo in home directory
+  command: chdir=~ git init
+
+- name: Make the remote point to the dotfiles repository
+  command: chdir=~ git remote add origin git@github.com:ioztelcan/dotfiles.git
+
+- name: Fetchy fetch
+  command: chdir=~ git fetch
+
+- name: Checkout the new stuff
+  command: chdir=~ git checkout -f master

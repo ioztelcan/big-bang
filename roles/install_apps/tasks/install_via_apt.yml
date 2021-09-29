@@ -1,0 +1,20 @@
+---
+# Add extra repos
+- name: Add repo for diff-so-fancy
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: ppa:aos1/diff-so-fancy
+    validate_certs: no
+
+- name: "Install apps"
+  become: yes
+  apt:
+    name: ['vim', 'tmux', 'fzf', 'nmap', 'curl', 'yakuake', 'openocd', 'wine', 'net-tools', 'openssh-server', 'diff-so-fancy']
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: "Remove unnecessary dependency binaries"
+  become: yes
+  apt:
+    autoremove: yes

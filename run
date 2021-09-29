@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#set -x
+
+if [ -z "$1" ]; then
+    echo "No args supplied"
+elif [ $1 -eq "1" ]; then
+    echo "Step 1"
+    ansible-playbook step_1.yml -K -v
+elif [ $1 -eq "2" ]; then
+    echo "Step 2"
+    ansible-playbook step_2.yml -K -v
+fi
+

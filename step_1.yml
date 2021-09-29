@@ -1,0 +1,12 @@
+---
+- name: Configure a newly minted development machine
+  hosts: localhost
+  become: no
+  connection: localhost
+  ignore_errors: yes
+  roles:
+    - setup_directories
+    - generate_ssh_key
+    - clone_dotfiles
+    - install_toolchains
+

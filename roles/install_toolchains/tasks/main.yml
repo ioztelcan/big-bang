@@ -1,0 +1,22 @@
+---
+
+# Install golang
+- name: Download golang
+  get_url:
+    url: https://golang.org/dl/go1.17.1.linux-amd64.tar.gz
+    dest: ~/temp/go1.17.1.linux-amd64.tar.gz
+
+- name: Install golang
+  become: yes
+  ansible.builtin.unarchive:
+    src: ~/temp/go1.17.1.linux-amd64.tar.gz
+    dest: /usr/local
+
+  # Install cargo
+- name: Download rustup script
+  get_url:
+    url: https://sh.rustup.rs
+    dest: ~/temp/rustup.sh
+
+- name: Install rustup + cargo
+  shell: sh ~/temp/rustup.sh -y

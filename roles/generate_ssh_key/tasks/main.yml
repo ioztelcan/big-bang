@@ -1,0 +1,21 @@
+---
+# Generate an ssh-key, add it to assh-agent then wait for the user to add it to Github.
+- name: Generate ssh key
+  user:
+    name: "{{ansible_env.USER}}"
+    generate_ssh_key: yes
+    ssh_key_type: rsa
+    ssh_key_bits: 4096
+
+- name: Check ssh-agent
+  shell: eval "$(ssh-agent)" & ssh-add ~/.ssh/id_rsa
+
+- name: Add ssh key to ssh-agent
+  command: ssh-add ~/.ssh/id_rsa
+
+- name: Print public component
+  command: cat ~/.ssh/id_rsa.pub
+
+- name: Prompt user to add the ssh-key to Github
+  pause:
+    prompt: Please copy the public key above and add it to Github via web interface. Then press Enter.

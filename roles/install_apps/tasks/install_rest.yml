@@ -1,0 +1,11 @@
+---
+# Install cargo apps
+- name: Install exa
+  shell: cargo install exa
+
+- name: Install bat
+  shell: cargo install --locked bat
+
+# Install golang apps
+- name: Install cheat
+  command: go get -u github.com/cheat/cheat/cmd/cheat

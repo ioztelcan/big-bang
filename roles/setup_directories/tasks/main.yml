@@ -1,0 +1,26 @@
+---
+# Replace default directories with custom ones
+
+- name: Remove default directories
+  file:
+    state: absent
+    path: "~/{{ item }}"
+  with_items:
+    - Pictures
+    - Documents
+    - Public
+    - Templates
+    - Music
+    - Videos
+
+- name: Create required directories
+  file:
+    state: directory
+    path: "~/{{ item }}"
+  with_items:
+     - develop
+     - software
+     - projects
+     - bin
+     - docs
+     - temp
