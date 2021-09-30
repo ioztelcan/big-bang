@@ -6,4 +6,5 @@
   ignore_errors: yes
   roles:
     - install_apps
+    - clean_up
 

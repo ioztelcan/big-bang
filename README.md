@@ -29,7 +29,7 @@ python get-pip.py --user
 
 - As it is the main tool required to run the playbook, install ansible.
 
-`python -m pip install --user ansible`
+`pip3 install --user ansible`
 
 ## Usage
 

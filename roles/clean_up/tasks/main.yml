@@ -1,0 +1,4 @@
+---
+
+- name: Cleanup downloaded files etc.
+  command: rm -r ~/temp/*

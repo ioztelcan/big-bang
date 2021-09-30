@@ -9,3 +9,8 @@
 # Install golang apps
 - name: Install cheat
   command: go get -u github.com/cheat/cheat/cmd/cheat
+
+# Install via pip
+- name: Install meson
+  become: yes
+  command: pip3 install meson
