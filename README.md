@@ -16,7 +16,7 @@ Install git using your favorite method. I usually use the apt repos which tend t
 
 `sudo apt install git-all`
 
-2. **Install pip**
+2. **Install pip (and some other python stuff)**
 
 Assuming you are on a new enough distribution, everything **python** related will be using **python3**. Same goes for **pip** (i.e **pip3**). A nifty way of getting the latest version is:
 
@@ -24,6 +24,12 @@ Assuming you are on a new enough distribution, everything **python** related wil
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py --user
 ```
+
+If you're on Ubuntu 20.04, you probably need these too:
+
+`sudo apt-get install python3-distutils`
+
+`sudo apt-get install python3-apt`
 
 3. **Install ansible**
 
