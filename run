@@ -3,12 +3,17 @@
 #set -x
 
 if [ -z "$1" ]; then
-    echo "No args supplied"
+    echo "Run script: Starts the big bang playbook. Select between step 1 or 2."
+    echo
+    echo "  Usage:"
+    echo "      ./run [step] (step can be 1 or 2)"
+    echo "  Example:"
+    echo "      ./run 1"
 elif [ $1 -eq "1" ]; then
-    echo "Step 1"
+    echo "Big Bang Step 1"
     ansible-playbook step_1.yml -K -v
 elif [ $1 -eq "2" ]; then
-    echo "Step 2"
+    echo "Big Bang Step 2"
     ansible-playbook step_2.yml -K -v
 fi
 

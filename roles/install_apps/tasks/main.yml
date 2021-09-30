@@ -2,7 +2,7 @@
 # Install required applications
 
 - include: install_via_apt.yml
-#- include: install_rest.yml
+- include: install_rest.yml
 
 
 
