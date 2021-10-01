@@ -6,31 +6,34 @@
     repo: ppa:aos1/diff-so-fancy
     validate_certs: no
 
-- name: Add repo for vs-code
-  become: yes
-  ansible.builtin.apt_repository:
-    repo: deb https://packages.microsoft.com/repos/vscode stable main #[arch=amd64]
-    validate_certs: no
+#- name: Add repo for vs-code
+#  become: yes
+#  ansible.builtin.apt_repository:
+#    repo: deb https://packages.microsoft.com/repos/vscode stable main #[arch=amd64]
+#    validate_certs: no
 
-- name: Add repo for sublime text
-  become: yes
-  ansible.builtin.apt_repository:
-    repo: deb https://download.sublimetext.com/ apt/stable/
-    validate_certs: no
+#- name: Add repo for sublime text
+#  become: yes
+#  ansible.builtin.apt_repository:
+#    repo: deb https://download.sublimetext.com/ apt/stable/
+#    validate_certs: no
 
-- name: Add repo for sublime text
-  become: yes
-  ansible.builtin.apt_repository:
-    repo: deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free
-    validate_certs: no
+#- name: Add repo for Resilio Sync
+#  become: yes
+#  ansible.builtin.apt_repository:
+#    repo: deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free
+#    validate_certs: no
 
 - name: "Install apps"
   become: yes
   apt:
     name:
-      ['apt-transport-https',
+      [
+      'apt-transport-https',
       'software-properties-common',
+      'build-essential',
       'vim',
+      'vim-gui-common',
       'tmux',
       'fzf',
       'nmap',
@@ -41,9 +44,10 @@
       'net-tools',
       'openssh-server',
       'diff-so-fancy',
-      'resilio-sync',
-      'code',
-      'sublime-text']
+      #'resilio-sync',
+      #'code',
+      #'sublime-text'
+      ]
     state: present
     update_cache: true
     cache_valid_time: 3600
