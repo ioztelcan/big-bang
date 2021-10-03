@@ -32,6 +32,7 @@
       'apt-transport-https',
       'software-properties-common',
       'build-essential',
+      'network-manager-openvpn',
       'vim',
       'vim-gui-common',
       'tmux',
